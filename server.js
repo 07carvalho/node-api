@@ -10,9 +10,7 @@ mongoose.connect('mongodb://localhost:27017/nodeapi', {useNewUrlParser: true});
 requireDir('./src/models');
 
 // route
-app.get('/', (req, res) => {
-	return res.send('Hello Rocketseat');
-});
+app.use('/api', require('./src/routes'));
 
 app.listen(3001);
 
